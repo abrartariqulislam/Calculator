@@ -42,6 +42,7 @@ input {
   border-radius: 16px;
   color: #fff;
   cursor: pointer;
+  overflow: hidden;
 }
 input::placeholder {
   color: #fff;
