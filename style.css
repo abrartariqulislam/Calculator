@@ -30,11 +30,10 @@ h1 {
   justify-content: center;
   width: 340px;
 }
-input {
+.input {
   width: 100%;
   padding: 20px;
   margin: 10px;
-  text-align: right;
   font-size: 32px;
   background: unset;
   border: unset;
@@ -42,13 +41,38 @@ input {
   border-radius: 16px;
   color: #fff;
   cursor: pointer;
-  overflow: hidden;
+  overflow: auto;
+  transform: rotateZ(180deg);
 }
-input::placeholder {
-  color: #fff;
+.input b{
+  transform: rotateZ(-180deg);
+  display: inline-block;
+  font-weight: 500;
 }
-input:focus {
-  outline: unset;
+.input b::selection{
+  background-color: unset;
+}
+/* width */
+.input::-webkit-scrollbar {
+  height: 8px;
+  width: 20px;
+}
+
+/* Track */
+.input::-webkit-scrollbar-track {
+  border-radius: 25px;
+}
+
+/* Handle */
+.input::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #0a0a0a, #0b2e5f);
+  box-shadow:inset 0px 0px 15px rgba(113, 115, 119, 0.5);
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+.input::-webkit-scrollbar-thumb:hover {
+ 
 }
 button {
   height: 60px;
@@ -59,7 +83,8 @@ button {
   border: 1px solid rgba(113, 115, 119, 0.3);
   color: #fff;
   font-size: 20px;
-  box-shadow: 0px 0px 25px rgba(113, 115, 119, 0.2);
+  box-shadow: 0px 0px 25px rgba(113, 115, 119, 0.2),
+  inset 0 0 15px rgba(0, 0, 17, 0.295);
   font-weight: 600;
   cursor: pointer;
 }
